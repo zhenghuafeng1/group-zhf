@@ -1,8 +1,6 @@
 package zhf.singleThreadExecutor;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class SingleThreadExecutorMain {
     public static void main(String[] args) throws InterruptedException {
@@ -10,15 +8,20 @@ public class SingleThreadExecutorMain {
         System.out.println("线程池测试开始执行！");
 
 
-        ExecutorService threadExecutor= Executors.newSingleThreadExecutor();
+        /**
+         * 单例化线程池
+         */
+//        ExecutorService threadExecutor= Executors.newSingleThreadExecutor();
+//
+//        for(int i=0;i<10;i++){
+//            threadExecutor.execute(new ThreadPool());
+//        }
+//        threadExecutor.shutdown();
 
-        for(int i=0;i<10;i++){
-            threadExecutor.execute(new ThreadPool());
-        }
-        threadExecutor.shutdown();
 
-
-
+        ScheduledExecutorService threadExecutor=Executors.newScheduledThreadPool(size);
+//        threadExecutor.schedule(new ThreadPool(),10, TimeUnit.SECONDS);
+        threadExecutor.scheduleAtFixedRate(new ThreadPool(),10,3, TimeUnit.SECONDS);
 
         System.out.println("线程池测试执行完毕！");
     }
