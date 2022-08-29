@@ -19,7 +19,7 @@ public class SingleThreadExecutorMain {
 //        threadExecutor.shutdown();
 
 
-        ScheduledExecutorService threadExecutor=Executors.newScheduledThreadPool(size);
+        ScheduledExecutorService threadExecutor=Executors.newScheduledThreadPool(3);
 //        threadExecutor.schedule(new ThreadPool(),10, TimeUnit.SECONDS);
         threadExecutor.scheduleAtFixedRate(new ThreadPool(),10,3, TimeUnit.SECONDS);
 
