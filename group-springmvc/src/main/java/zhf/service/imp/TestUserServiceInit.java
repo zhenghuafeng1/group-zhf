@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @ClassName
  * @Customer
  **/
-@Service
+//@Service
 public class TestUserServiceInit implements BeanPostProcessor {
 
     @Override
