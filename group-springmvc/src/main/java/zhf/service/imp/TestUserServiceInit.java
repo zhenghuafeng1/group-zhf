@@ -15,13 +15,13 @@ public class TestUserServiceInit implements BeanPostProcessor {
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("前置初始化");
+        System.out.println(beanName+"   :  前置初始化");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("后置初始化");
+        System.out.println(beanName+"   :  后置初始化");
         return bean;
     }
 }
